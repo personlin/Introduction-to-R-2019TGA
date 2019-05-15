@@ -9,8 +9,8 @@
 ----
 <!-- TOC depthFrom:1 depthTo:6 withLinks:1 updateOnSave:1 orderedList:0 -->
 
-
-- [R conference 研討會](#R-conference-研討會)
+- [R online course 線上教學](#r-online-course-線上教學)
+- [R conference 研討會](#r-conference-研討會)
 - [Reference 參考文獻](#reference-參考文獻)
 - [Sponsor 主辦單位](#sponsor-主辦單位)
 
@@ -85,6 +85,10 @@ Statistical Seismology Library
 # Python使用者 
 
  - [寫給Python使用者的R語言介紹](https://gvwilson.github.io/tidynomicon/)
+
+# R online course 線上教學
+
+ - [fasteR: Fast Lane to Learning R!](https://github.com/matloff/fasteR)
  
 # R conference 研討會
 
