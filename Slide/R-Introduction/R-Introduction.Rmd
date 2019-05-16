@@ -17,6 +17,8 @@ class: inverse, center, middle
 
 # 開始！
 
+課後問卷 <https://forms.gle/mTV5qKPJXiv7NnMp6>
+
 ---
 
 # 學習R的理由
