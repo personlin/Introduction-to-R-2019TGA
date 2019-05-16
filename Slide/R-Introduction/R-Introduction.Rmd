@@ -195,6 +195,92 @@ DT::datatable(
 
 ---
 
+# Rayshader
+
+```{r}
+# load library
+library(rayshader)
+library(raster)
+library(magrittr)
+
+# get DTM data
+srtm1 <- getData("SRTM", lat = 25.0169, lon = 121.8757)
+srtm2 <- getData("SRTM", lat = 24.0169, lon = 121.8757)
+dem.raster <- merge(srtm1, srtm2, tolerance=0.01)
+
+# crop DTM data to Taipei Basin area
+lx <- 121.87
+ly <- 25.01
+r <- 0.1
+ext <- extent(lx-r, lx+r, ly-r, ly+r)
+city <- crop(dem.raster, ext)
+
+# Convert the raster to elevation matrix
+elmat <- matrix(extract(city, extent(city)),
+                nrow=nrow(city),
+                ncol=ncol(city))
+# rayshader plot 2d map
+z <- 10
+model <- elmat %>%
+  sphere_shade(texture = "imhof2", sunangle = 45) %>%
+  add_shadow(ambient_shade(elmat, zscale=z, anglebreaks = seq(65, 65, 1))) %>%
+  add_shadow(ray_shade(elmat, zscale=z, lambert=T, anglebreaks = seq(65, 65, 1)))
+model %>%
+  plot_map()
+```
+
+---
+
+# 換個顏色
+```{r}
+# rayshader plot 2d map - green style
+model.green <- elmat %>%
+  sphere_shade() %>%
+  add_water(detect_water(elmat, cutoff=0.8, zscale=1.0)) %>%
+  add_shadow(lamb_shade(elmat)) %>% add_shadow(ambient_shade(elmat))
+model.green %>%
+  plot_map()
+```
+
+---
+
+#變成3D
+
+```{r}
+# 3D plot
+model.green %>%  
+  plot_3d(elmat, zscale=20,
+          soliddepth=-60,
+          windowsize = c(1200, 1200),
+          fov=60)
+rgl::snapshot3d("rayshader03.png")
+```
+---
+
+# 換個風格
+
+```{r}
+elmat %>%
+  sphere_shade(texture = "bw") %>%
+  add_shadow(ray_shade(elmat)) %>%
+  add_shadow(ambient_shade(elmat)) %>%
+  plot_3d(elmat, zscale=20, solid = TRUE, shadow = TRUE, water = TRUE)
+
+rgl::snapshot3d("rayshader04.png")
+```
+---
+
+# 轉圈圈
+
+```{r}
+# 3D plot auto rotation
+elmat %>%
+  sphere_shade(texture = "imhof2") %>%
+  plot_3d(elmat, zscale=30)
+rgl::play3d(rgl::spin3d(c(0, 1, 0)))
+```
+
+---
 #R還可以...
 - 使用[Shiny](https://shiny.rstudio.com/)建立數據的[互動式圖表](https://shiny.rstudio.com/gallery/): [Nepal quake](https://asheshwor.shinyapps.io/np-quake/)
 - [devtools](https://www.rstudio.com/products/rpackages/devtools/)開發R語言套件pacakge: [GMPEhaz](https://github.com/personlin/GMPEhaz)
