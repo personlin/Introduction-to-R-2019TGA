@@ -1,0 +1,161 @@
+---
+title: "中華民國地球物理學會與中華民國地質學會108年年會暨學術研討會-R程式語言介紹"
+subtitle: "R地科相關套件應用"
+author: "林柏伸"
+institute: "財團法人中興工程顧問社"
+date: "2019/05/17"
+output:
+  xaringan::moon_reader:
+    css: [default, zh-CN.css]
+    lib_dir: libs
+    nature:
+      highlightStyle: github
+      highlightLines: true
+      countIncrementalSlides: false
+---
+class: inverse, center, middle
+
+# 開始！
+
+---
+
+# 學習R的理由
+
+- 免錢(Free)與開放原始碼(Open Source)
+- 跨平台，可以跑在Windows、Mac、Linux
+- 搭上現在最夯的話題：Data Science、Big data...
+
+當然，你也可以學JAVA、C、Python...但我個人用R，所以我首推R (Python次之)。
+
+---
+
+#R的相關網頁
+- [官方網頁https://www.r-project.org/](https://www.r-project.org/) 直接google "r"第一個結果就是!
+- [RStudio](https://www.rstudio.com/) 寫R必備的IDE工具，找不到更好的了！
+    - [rmarkdown](http://rmarkdown.rstudio.com/) R寫文件
+    - [shiny](http://shiny.rstudio.com/) RStudio開發出來的架構，可以用R開發網頁應用。
+    - [Rpubs](https://rpubs.com/) 用R寫出來的文件可以丟到上面分享。
+- [RDocumentation](http://www.rdocumentation.org/) 搜尋R package & function 的好地方！！
+- [R Weekly](https://rweekly.org/) R週報，吸收R新知的地方！(__推推！__)
+- [R-blogger](https://www.r-bloggers.com/) 另一個吸收R新知的地方
+- [Awesome R](https://awesome-r.com/) A curated list of awesome R packages and tools.
+
+---
+
+#台灣的R社群
+- [Taiwan R User Group / MLDM Monday](https://www.meetup.com/Taiwan-R/)
+- [R-LADIES TAIPEI](https://rladiestaipei.github.io/R-Ladies-Taipei/)
+
+---
+
+#學習R的管道
+- [Coursera線上課程](https://www.coursera.org/)
+
+    英文發音但是有中文字幕！重點是不只有R的課程可以學，還有各式各樣的課程可以學習，連台大都有老師把課程放上去。(極推！)
+    
+- [stackoverflow](http://stackoverflow.com/questions/tagged/r)
+
+    寫程式的時候遇到問題都可以來這裡找答案！
+
+---
+
+#進階了解R
+- [Advanced R](http://adv-r.had.co.nz/) 
+
+    R的神級高手Hadley Wickham[(個人網頁)](http://hadley.nz/)寫的，他目前在RStudio服務，寫了很多很厲害的package，如果可以把他寫的package都搞熟了，那差不多可以是半個神人了。
+
+- [The tidyverse](http://tidyverse.org/) 
+
+<a href="http://dplyr.tidyverse.org"><img src="http://dplyr.tidyverse.org/logo.png" width="120" height="139"></a><a href="http://forcats.tidyverse.org"><img src="http://forcats.tidyverse.org/logo.png" width="120" height="139"></a><a href="http://ggplot2.tidyverse.org"><img src="http://ggplot2.tidyverse.org/logo.png" width="120" height="139"></a><a href="http://haven.tidyverse.org"><img src="http://haven.tidyverse.org/logo.png" width="120" height="139"></a><a href="http://lubridate.tidyverse.org"><img src="http://lubridate.tidyverse.org/logo.png" width="120" height="139"></a><a href="http://magrittr.tidyverse.org"><img src="http://magrittr.tidyverse.org/logo.png" width="120" height="139"></a><a href="http://purrr.tidyverse.org"><img src="http://purrr.tidyverse.org/logo.png" width="120" height="139"></a><a href="http://readr.tidyverse.org"><img src="http://readr.tidyverse.org/logo.png" width="120" height="139"></a><a href="http://readxl.tidyverse.org"><img src="http://readxl.tidyverse.org/logo.png" width="120" height="139"></a><a href="http://stringr.tidyverse.org"><img src="http://stringr.tidyverse.org/logo.png" width="120" height="139"></a><a href="http://tibble.tidyverse.org"><img src="http://tibble.tidyverse.org/logo.png" width="120" height="139"></a><a href="http://tidyr.tidyverse.org"><img src="http://tidyr.tidyverse.org/logo.png" width="120" height="139"></a><a href="http://tidyverse.tidyverse.org"><img src="http://tidyverse.tidyverse.org/logo.png" width="120" height="139"></a>
+
+---
+
+#R地科相關應用套件
+- [Introduction to R for the Geosciences](http://www.fromthebottomoftheheap.net/teaching/courses/mcmaster_2013/mcmaster_2013.html)
+
+- [使用R來做地震分析 Convert to R for Seismic Analysis.pdf](http://www.unc.edu/~leesj/FETCH/GRAB/Vignettes/whyRbeam.pdf)
+
+- [Statistical Seismology Library](http://homepages.maxnet.co.nz/davidharte/SSLib/) 地震統計學
+
+- [ETAS (Modeling earthquake data using Epidemic Type Aftershock Sequence model](http://cran.r-project.org/web/packages/ETAS/index.html)
+
+- [GRTo: Tools for the analysis of Gutenberg-Richter distributions of earthquake magnitudes](http://cran.r-project.org/web/packages/GRTo/index.html)
+
+---
+
+#特別介紹
+- Jonathan M. Lees
+- Professor, Department Chair, Department of Geological Sciences, University of North Carolina at Chapel Hill
+- [個人網頁http://www.unc.edu/~leesj/](http://www.unc.edu/~leesj/)
+- 開發的套件
+    - RSEIS:Seismic Analysis, Time Series
+    - GEOmap:Geological Mapping, GIS
+    - ProfessR:Create Exams, Grading
+    - RFOC:Focal Mechanisms, statistics on a sphere
+    - RPMG:Really Poor Man's GUI
+    - zoeppritz:scattering at an interface
+    - RTOMO:visualization of tomographic inversions 
+
+---
+
+#demo
+隨機取常態分佈N(0,1)的10個數。
+```{r}
+rnorm(10)
+```
+
+---
+
+#demo
+
+隨機取常態分佈N(0,1)的1000個數，然後畫直方圖(histogram)。
+```{r}
+x <- rnorm(1000,0,1)
+hist(x)
+```
+
+---
+
+#demo
+鳶尾花的數據集
+```{r}
+data(iris) #載入資料
+head(iris) #查看最前面6行資料
+```
+
+---
+
+#demo
+用R畫鳶尾花的數據集
+```{r}
+plot(iris) #畫圖
+```
+
+---
+
+#demo
+地圖
+```{r}
+library(maps)
+map()
+```
+
+---
+
+#demo|ggmap
+```{r, warning=FALSE, message=FALSE}
+library(ggmap)
+gm = get_map(location=c(121.25,24.9,121.8,25.3))
+ggmap(gm)
+```
+
+---
+
+#R還可以...
+- 使用[Shiny](https://shiny.rstudio.com/)建立數據的[互動式圖表](https://shiny.rstudio.com/gallery/): [Nepal quake](https://asheshwor.shinyapps.io/np-quake/)
+- [devtools](https://www.rstudio.com/products/rpackages/devtools/)開發R語言套件pacakge: [GMPEhaz](https://github.com/personlin/GMPEhaz)
+- [knitr](https://yihui.name/knitr/)、[rmarkdown](https://rmarkdown.rstudio.com/)建立報告、簡報、網站
+- [knitr](https://yihui.name/knitr/)、[bookdown](https://bookdown.org/yihui/bookdown/)撰寫電子書
+- [knitr](https://yihui.name/knitr/)、[blogdown](https://bookdown.org/yihui/blogdown/)建立個人blog:[Prof. Yi-Ju Tseng](https://yjtseng.info/)
+
+
