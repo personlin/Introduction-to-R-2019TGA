@@ -100,10 +100,32 @@ class: inverse, center, middle
 
 ---
 
+# R 語法
+
+```{r comment='#'}
+# a boring regression
+fit = lm(dist ~ 1 + speed, data = cars)
+coef(summary(fit))
+dojutsu = c('地爆天星', '天照', '加具土命', '神威', '須佐能乎', '無限月読')
+grep('天', dojutsu, value = TRUE)
+```
+
+---
 #demo
 隨機取常態分佈N(0,1)的10個數。
 ```{r}
 rnorm(10)
+```
+
+---
+
+
+# R Plots
+
+```{r cars, fig.height=4, dev='svg'}
+par(mar = c(4, 4, 1, .1))
+plot(cars, pch = 19, col = 'darkgray', las = 1)
+abline(fit, lwd = 2)
 ```
 
 ---
@@ -153,6 +175,26 @@ ggmap(gm)
 
 ---
 
+#互動式地圖
+
+```{r, warning=FALSE, message=FALSE}
+library(leaflet)
+leaflet() %>% addTiles() %>% setView(121.618, 25.056, zoom = 17)
+```
+
+---
+
+#互動式表格
+
+```{r, warning=FALSE, message=FALSE}
+DT::datatable(
+  head(iris, 10),
+  fillContainer = FALSE, options = list(pageLength = 8)
+)
+```
+
+---
+
 #R還可以...
 - 使用[Shiny](https://shiny.rstudio.com/)建立數據的[互動式圖表](https://shiny.rstudio.com/gallery/): [Nepal quake](https://asheshwor.shinyapps.io/np-quake/)
 - [devtools](https://www.rstudio.com/products/rpackages/devtools/)開發R語言套件pacakge: [GMPEhaz](https://github.com/personlin/GMPEhaz)
@@ -160,4 +202,14 @@ ggmap(gm)
 - [knitr](https://yihui.name/knitr/)、[bookdown](https://bookdown.org/yihui/bookdown/)撰寫電子書
 - [knitr](https://yihui.name/knitr/)、[blogdown](https://bookdown.org/yihui/blogdown/)建立個人blog:[Prof. Yi-Ju Tseng](https://yjtseng.info/)
 
+---
+class: center, middle
 
+# 希望大家會開始使用R語言
+從今天開始!!
+
+---
+class: center, middle
+
+#謝謝！Thanks!
+Slides created via the R package xaringan.
