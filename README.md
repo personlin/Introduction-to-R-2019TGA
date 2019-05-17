@@ -92,15 +92,15 @@ Statistical Seismology Library
 
 ## Plot 繪圖
 
-- [ggplot2]()
+- [ggplot2](https://cran.r-project.org/package=ggplot2)
 
-- [echarts4r]()
+- [echarts4r](https://cran.r-project.org/package=echarts4r)
 用echart4 library繪圖
 
-- [highcharter]()
+- [highcharter](https://cran.r-project.org/package=highcharter)
 用highcharts library繪圖
 
-- [plotly]()
+- [plotly](https://cran.r-project.org/package=plotly)
 用plotly library繪圖
 
 
@@ -129,7 +129,11 @@ Statistical Seismology Library
 
 ## Git 版本控制系統
 
-## Docker
+[ 連猴子都能懂的Git入門指南](https://backlog.com/git-tutorial/tw/)
+
+## Docker 容器化技術
+
+[Docker — 从入门到实践](https://yeasy.gitbooks.io/docker_practice/)
  
 # Reference 參考文獻
 
