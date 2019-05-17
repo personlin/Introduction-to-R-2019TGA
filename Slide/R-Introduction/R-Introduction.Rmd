@@ -17,6 +17,52 @@ class: inverse, center, middle
 
 # 讓我們開始吧！
 
+先看一下報名資料...
+
+---
+
+# 程式語言能力
+
+.center[![](survey-00.jpg)]
+
+---
+
+# 對於R的認識程度
+
+.center[![](survey-01.jpg)]
+
+---
+
+# 對於本課程的期待
+
+.pull-left[
+- 介由課程了解R程式語言，
+- 沒接觸過但聽說很棒，想了解在地科界的應用，如果跟地球化學資料處裡有關就更棒了
+- 1. 知道怎麼自學 2. 知道哪裡找套件
+- 希望學會如何視覺化空間資料
+- 希望能學到基本入門與應用
+- 希望聽到資料分析，統計分析和繪圖
+- 學習R地科相關套件介紹與範例還有Rmark down
+- 地科相關程式的應用
+- 如何畫簡單的統計圖表
+- 希望能靈活應用在科學資料的研究及視覺展示
+]
+
+.pull-right[
+- R地科相關套件、GIS空間相關分析套件
+- 學習概念、實用的學習資源
+- R應用於地質時序問題
+- 地科相關套件應用
+- 繪圖與地科相關套件的應用
+- 稍能一窺R在專業領域之應用
+- 實際運行之地科相關套件
+- 大數據應用分析
+- 應用範圍
+- R在地科上的應用
+- R語言基礎語法以及應用
+- R語言對資料分析的應用(訊號處理)
+- 如何應用R語言於板塊重建繪圖軟體
+]
 
 ---
 
@@ -239,7 +285,7 @@ leaflet() %>% addTiles() %>% setView(121.618, 25.056, zoom = 17)
 ```{r eval=require('DT'), tidy=FALSE}
 DT::datatable(
   head(iris, 10),
-  fillContainer = FALSE, options = list(pageLength = 8)
+  fillContainer = FALSE, options = list(pageLength = 6)
 )
 ```
 
@@ -483,17 +529,59 @@ class: inverse, middle, center
 class: center, middle
 
 # 希望大家會開始使用R語言
-從今天開始!!
+
+## 從今天開始!!
 
 ---
 class: center, middle
 
 #謝謝！Thanks!
 
-##課後問卷 <https://forms.gle/mTV5qKPJXiv7NnMp6>
+<https://forms.gle/mTV5qKPJXiv7NnMp6>
 
-填完可以抽獎(一本R的書)
+.pull-left[
 
-.center[![](http://m.sanmin.com.tw/Assets/product_images/751/751990294.jpg)]
+##課後問卷 
+
+<img src="qr-code_survey.png" alt="QR code" width="250"/>
+]
+
+.pull-right[
+
+###填完可以抽獎(一本R的書)
+
+<img src="http://m.sanmin.com.tw/Assets/product_images/751/751990294.jpg" alt="book" height="250"/>
+
+]
 
 Slides created via the R package xaringan.
+
+---
+
+#Q&A
+
+- R語言如何和其它語言溝通? 例如 R 和 PYTHON。
+
+- 會鼓勵大家盡量用Linux平臺來建構R語言嗎? 原因?
+
+- 如何處理不同條件的數據?例如同是定年資料，但不同年代、用不同定年方法所得的數據，測得不同年代，且各自的誤差級距也不同。
+
+---
+
+# 歡迎加入R語言與地球科學
+
+.pull-left[
+
+##FB粉絲專頁
+
+<img src="qr-code_FB_RGeoscience.png" alt="QR code" width="300"/>
+]
+
+.pull-right[
+
+##Twitter
+
+<img src="qr-code_Twitter_RGeoscience.png" alt="QR code" width="300"/>
+
+]
+
