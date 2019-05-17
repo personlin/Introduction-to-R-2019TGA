@@ -2,7 +2,7 @@
 title: "中華民國地球物理學會與中華民國地質學會108年年會暨學術研討會-R程式語言介紹"
 subtitle: "R地科相關套件應用"
 author: "林柏伸"
-institute: "財團法人中興工程顧問社"
+institute: "財團法人中興工程顧問社<br/>防災科技研究中心"
 date: "2019/05/17"
 output:
   xaringan::moon_reader:
@@ -15,19 +15,40 @@ output:
 ---
 class: inverse, center, middle
 
-# 開始！
+# 讓我們開始吧！
 
-課後問卷 <https://forms.gle/mTV5qKPJXiv7NnMp6>
 
 ---
 
 # 學習R的理由
 
-- 免錢(Free)與開放原始碼(Open Source)
+--
+
+- 免錢(Free)
+
+--
+
+- 開放原始碼(Open Source)
+
+--
+
 - 跨平台，可以跑在Windows、Mac、Linux
+
+--
+
 - 搭上現在最夯的話題：Data Science、Big data...
 
 當然，你也可以學JAVA、C、Python...但我個人用R，所以我首推R (Python次之)。
+
+--
+
+- 用RStudio寫R很爽～～～
+
+.center[![](https://www.rstudio.com/wp-content/uploads/2019/03/RStudio-Logo-Blue-Gray-125.png)]
+
+--
+
+當然，RStudio也是免錢+開放原始碼
 
 ---
 
@@ -71,6 +92,25 @@ class: inverse, center, middle
 <a href="http://dplyr.tidyverse.org"><img src="http://dplyr.tidyverse.org/logo.png" width="120" height="139"></a><a href="http://forcats.tidyverse.org"><img src="http://forcats.tidyverse.org/logo.png" width="120" height="139"></a><a href="http://ggplot2.tidyverse.org"><img src="http://ggplot2.tidyverse.org/logo.png" width="120" height="139"></a><a href="http://haven.tidyverse.org"><img src="http://haven.tidyverse.org/logo.png" width="120" height="139"></a><a href="http://lubridate.tidyverse.org"><img src="http://lubridate.tidyverse.org/logo.png" width="120" height="139"></a><a href="http://magrittr.tidyverse.org"><img src="http://magrittr.tidyverse.org/logo.png" width="120" height="139"></a><a href="http://purrr.tidyverse.org"><img src="http://purrr.tidyverse.org/logo.png" width="120" height="139"></a><a href="http://readr.tidyverse.org"><img src="http://readr.tidyverse.org/logo.png" width="120" height="139"></a><a href="http://readxl.tidyverse.org"><img src="http://readxl.tidyverse.org/logo.png" width="120" height="139"></a><a href="http://stringr.tidyverse.org"><img src="http://stringr.tidyverse.org/logo.png" width="120" height="139"></a><a href="http://tibble.tidyverse.org"><img src="http://tibble.tidyverse.org/logo.png" width="120" height="139"></a><a href="http://tidyr.tidyverse.org"><img src="http://tidyr.tidyverse.org/logo.png" width="120" height="139"></a><a href="http://tidyverse.tidyverse.org"><img src="http://tidyverse.tidyverse.org/logo.png" width="120" height="139"></a>
 
 ---
+class: inverse, middle, center
+
+# 讓我們來看看R的擴充套件
+
+---
+
+# R packages 套件列表
+
+目前R共有 __14190__ 個套件在CRAN套件庫
+
+- [按照套件名稱排序的列表](https://cran.r-project.org/web/packages/available_packages_by_name.html)
+- [按照主題分類的套件列表](https://cran.r-project.org/web/views/)
+    - [化學計量學與計算物理學 Chemometrics and Computational Physics](https://cran.r-project.org/web/views/ChemPhys.html)
+    - [水文學 Hydrology](https://cran.r-project.org/web/views/Hydrology.html)
+    - [空間分析 Analysis of Spatial Data](https://cran.r-project.org/web/views/Spatial.html)
+    - [時空資料分析 Spatio-Temporal](https://cran.r-project.org/web/views/SpatioTemporal.html)
+    - [時序分析 Time Series Analysis](https://cran.r-project.org/web/views/TimeSeries.html)
+
+---
 
 #R地科相關應用套件
 - [Introduction to R for the Geosciences](http://www.fromthebottomoftheheap.net/teaching/courses/mcmaster_2013/mcmaster_2013.html)
@@ -100,7 +140,7 @@ class: inverse, center, middle
 
 ---
 
-# R 語法
+# R 語法範例
 
 ```{r comment='#'}
 # a boring regression
@@ -109,6 +149,11 @@ coef(summary(fit))
 dojutsu = c('地爆天星', '天照', '加具土命', '神威', '須佐能乎', '無限月読')
 grep('天', dojutsu, value = TRUE)
 ```
+
+---
+class: inverse, middle, center
+
+# 看一下其他的範例
 
 ---
 #demo
@@ -133,7 +178,7 @@ abline(fit, lwd = 2)
 #demo
 
 隨機取常態分佈N(0,1)的1000個數，然後畫直方圖(histogram)。
-```{r}
+```{r hist, fig.height=4, dev='svg'}
 x <- rnorm(1000,0,1)
 hist(x)
 ```
@@ -142,7 +187,7 @@ hist(x)
 
 #demo
 鳶尾花的數據集
-```{r}
+```{r iris}
 data(iris) #載入資料
 head(iris) #查看最前面6行資料
 ```
@@ -151,15 +196,20 @@ head(iris) #查看最前面6行資料
 
 #demo
 用R畫鳶尾花的數據集
-```{r}
+```{r iris-plot, fig.height=4, dev='svg'}
 plot(iris) #畫圖
 ```
+
+---
+class: inverse, middle, center
+
+# 來畫地圖
 
 ---
 
 #demo
 地圖
-```{r}
+```{r maps, fig.height=6}
 library(maps)
 map()
 ```
@@ -167,7 +217,7 @@ map()
 ---
 
 #demo|ggmap
-```{r, warning=FALSE, message=FALSE}
+```{r ggmap, fig.height=6, warning=FALSE, message=FALSE}
 library(ggmap)
 gm = get_map(location=c(121.25,24.9,121.8,25.3))
 ggmap(gm)
@@ -177,7 +227,7 @@ ggmap(gm)
 
 #互動式地圖
 
-```{r, warning=FALSE, message=FALSE}
+```{r out.width='100%', fig.height=6, eval=require('leaflet'), warning=FALSE, message=FALSE}
 library(leaflet)
 leaflet() %>% addTiles() %>% setView(121.618, 25.056, zoom = 17)
 ```
@@ -186,7 +236,7 @@ leaflet() %>% addTiles() %>% setView(121.618, 25.056, zoom = 17)
 
 #互動式表格
 
-```{r, warning=FALSE, message=FALSE}
+```{r eval=require('DT'), tidy=FALSE}
 DT::datatable(
   head(iris, 10),
   fillContainer = FALSE, options = list(pageLength = 8)
@@ -195,9 +245,10 @@ DT::datatable(
 
 ---
 
-# Rayshader
+# Rayshader畫陰影圖
 
-```{r}
+先來下載個數值地形吧！
+```{r rayshader, warning=FALSE, message=FALSE}
 # load library
 library(rayshader)
 library(raster)
@@ -207,18 +258,30 @@ library(magrittr)
 srtm1 <- getData("SRTM", lat = 25.0169, lon = 121.8757)
 srtm2 <- getData("SRTM", lat = 24.0169, lon = 121.8757)
 dem.raster <- merge(srtm1, srtm2, tolerance=0.01)
+```
 
+---
+
+#Rayshader畫陰影圖
+
+裁切一下數值地形
+```{r cropDTM, warning=FALSE, message=FALSE}
 # crop DTM data to Taipei Basin area
 lx <- 121.87
 ly <- 25.01
 r <- 0.1
 ext <- extent(lx-r, lx+r, ly-r, ly+r)
 city <- crop(dem.raster, ext)
-
 # Convert the raster to elevation matrix
 elmat <- matrix(extract(city, extent(city)),
                 nrow=nrow(city),
                 ncol=ncol(city))
+```
+---
+
+#Rayshader畫陰影圖
+
+```{r rayshader plot, fig.height=4, warning=FALSE, message=FALSE}
 # rayshader plot 2d map
 z <- 10
 model <- elmat %>%
@@ -229,10 +292,12 @@ model %>%
   plot_map()
 ```
 
+
+
 ---
 
-# 換個顏色
-```{r}
+# Rayshader畫陰影圖-換個顏色
+```{r rayshader green, fig.height=4, warning=FALSE, message=FALSE}
 # rayshader plot 2d map - green style
 model.green <- elmat %>%
   sphere_shade() %>%
@@ -244,41 +309,167 @@ model.green %>%
 
 ---
 
-#變成3D
+#Rayshader畫陰影圖-變成3D
 
-```{r}
+```{r rayshader 3D, warning=FALSE, message=FALSE, eval=FALSE}
 # 3D plot
-model.green %>%  
+library(rgl)
+model.green %>%
   plot_3d(elmat, zscale=20,
           soliddepth=-60,
-          windowsize = c(1200, 1200),
+          windowsize = c(600, 600),
           fov=60)
-rgl::snapshot3d("rayshader03.png")
+rglwidget()
 ```
+
+---
+class: inverse, middle, center
+
+# 我要GIS功能
+
 ---
 
-# 換個風格
+# sf讀寫GIS檔案
 
-```{r}
-elmat %>%
-  sphere_shade(texture = "bw") %>%
-  add_shadow(ray_shade(elmat)) %>%
-  add_shadow(ambient_shade(elmat)) %>%
-  plot_3d(elmat, zscale=20, solid = TRUE, shadow = TRUE, water = TRUE)
+[Simple Features for R](http://r-spatial.github.io/sf/)
 
-rgl::snapshot3d("rayshader04.png")
+```{r sf, warning=FALSE, message=FALSE, error=FALSE}
+library(sf)
+#讀取shape檔
+nc <- st_read(system.file("shape/nc.shp", package="sf"))
+
 ```
+
 ---
 
-# 轉圈圈
+# sf讀寫GIS檔案-畫圖
 
-```{r}
-# 3D plot auto rotation
-elmat %>%
-  sphere_shade(texture = "imhof2") %>%
-  plot_3d(elmat, zscale=30)
-rgl::play3d(rgl::spin3d(c(0, 1, 0)))
+```{r sf-plot, warning=FALSE, message=FALSE, error=FALSE}
+par(mar = c(0,0,1,0))
+plot(nc[1], reset = FALSE) 
 ```
+
+---
+
+# mapview互動式地圖
+
+[Interactive viewing of spatial data in R](https://r-spatial.github.io/mapview/)
+```{r mapview, warning=FALSE, message=FALSE, error=FALSE}
+library(mapview)
+mapview(nc)
+```
+
+---
+# mapedit互動式地圖編輯
+
+[Interactive editing of spatial data in R](https://www.r-spatial.org/r/2017/06/09/mapedit_0-2-0.html)
+```{r mapedit, warning=FALSE, message=FALSE, error=FALSE}
+library(mapedit)
+#crud <- editMap(mapview())
+```
+
+---
+# leafpm互動式地圖編輯
+
+[Leaflet.pm for R Leaflet](https://github.com/r-spatial/leafpm)
+
+```{r leaf.pm, warning=FALSE, message=FALSE, error=FALSE, eval=FALSE}
+library(leafpm)
+library(mapview)
+library(leafpm)
+library(sf)
+
+outer1 = matrix(c(0,0,10,0,10,10,0,10,0,0),ncol=2, byrow=TRUE)
+hole1 = matrix(c(1,1,1,2,2,2,2,1,1,1),ncol=2, byrow=TRUE)
+hole2 = matrix(c(5,5,5,6,6,6,6,5,5,5),ncol=2, byrow=TRUE)
+outer2 = matrix(c(11,0,11,1,12,1,12,0,11,0),ncol=2, byrow=TRUE)
+pts1 = list(outer1, hole1, hole2)
+pts2 = list(outer2)
+pl1 = st_sf(geom = st_sfc(st_polygon(pts1)))
+pl2 = st_sf(geom = st_sfc(st_polygon(pts2)))
+mpl = st_sf(geom = st_combine(rbind(pl1, pl2)))
+addPmToolbar(
+  mapview(mpl)@map,
+  targetGroup = "mpl"
+)
+```
+
+---
+
+# osmdata開放街圖資料
+
+[R package for downloading OpenStreetMap data](https://ropensci.github.io/osmdata/)
+
+```{r osmdata, fig.height=4, warning=FALSE, message=FALSE, error=FALSE}
+library(osmdata)
+x <- opq(bbox = 'Taipei') %>%
+    add_osm_feature(key = 'highway', value = 'motorway') %>%
+    osmdata_sf ()
+sp::plot(x$osm_lines)
+```
+
+---
+class: inverse, middle, center
+
+# 來點地震學的東西吧！
+
+---
+
+#IRISSeismic抓IRIS資料
+
+讓我們到IRIS抓個地震波資料吧！
+
+```{r IRISSeismic, fig.height=4, warning=FALSE, message=FALSE, error=FALSE}
+library(IRISSeismic)
+iris <- new("IrisClient")
+starttime <- as.POSIXct("2002-04-20", tz="GMT")
+endtime <- as.POSIXct("2002-04-21", tz="GMT")
+st <- getDataselect(iris,"US","OXF","","BHZ",starttime,endtime)
+tr <- st@traces[[3]]
+plot(tr)
+```
+
+---
+
+#RFOC畫震源機制
+
+畫震源機制解
+
+```{r RFOC, fig.height=6, warning=FALSE, message=FALSE, error=FALSE}
+library(RFOC)
+SDRfoc(-25, 34, 16,u = FALSE, ALIM = c(-1, -1, +1, +1), PLOT=TRUE)
+```
+
+---
+
+#RTOMO畫Tomography的資料
+
+```{r RTOMO, fig.height=6, warning=FALSE, message=FALSE, error=FALSE}
+library(RTOMO)
+data(HELMOD)
+data(HELMAP)
+SHOWTOMO(HELMOD, MAP=HELMAP,  bkgr="beige", I=1, J=15)
+```
+
+
+---
+
+#echarts4r畫美美的圖
+
+用Echarts Javascript來畫很厲害的圖
+
+[echarts for R - htmlwidget](http://echarts4r.john-coene.com)
+
+[echarts4r Gallery](https://echarts4r.john-coene.com/articles/gallery.html)
+
+---
+class: inverse, middle, center
+
+# 還有其他一萬多個套件等著你
+
+## 還有更多github上的套件...
+
+## 還有你可以自己開發套件!
 
 ---
 #R還可以...
@@ -298,4 +489,11 @@ class: center, middle
 class: center, middle
 
 #謝謝！Thanks!
+
+##課後問卷 <https://forms.gle/mTV5qKPJXiv7NnMp6>
+
+填完可以抽獎(一本R的書)
+
+.center[![](http://m.sanmin.com.tw/Assets/product_images/751/751990294.jpg)]
+
 Slides created via the R package xaringan.
