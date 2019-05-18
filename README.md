@@ -2,6 +2,8 @@
 
 2019.05.17<br>Person Lin
 
+Slide [http://www.personlin.com/R-Introduction/](http://www.personlin.com/R-Introduction/)
+
 ----
 
 [Introduction to R 2018geo](https://personlin.github.io/Introduction-to-R-2018geo/)
