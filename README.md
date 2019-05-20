@@ -4,6 +4,8 @@
 
 Slide [http://www.personlin.com/R-Introduction/](http://www.personlin.com/R-Introduction/)
 
+[Slide source code](https://github.com/personlin/Introduction-to-R-2019TGA/blob/master/Slide/R-Introduction/R-Introduction.Rmd)
+
 ----
 
 [Introduction to R 2018geo](https://personlin.github.io/Introduction-to-R-2018geo/)
